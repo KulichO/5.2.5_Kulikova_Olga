@@ -4,12 +4,22 @@ import { VacancyPage } from "./pages/VacancyPage";
 import { useAppDispatch, useAppSelector } from "./store/hooks";
 import { useEffect } from "react";
 import { fetchVacancies } from "./store/vacanciesSlice";
+import {
+  selectSearch,
+  selectCity,
+  selectSkills,
+  selectPage,
+  selectPerPage,
+} from "./store/vacanciesSelectors";
 
 function App() {
   const dispatch = useAppDispatch();
-  const { search, city, skills, page, perPage } = useAppSelector(
-    (state) => state.vacancies
-  );
+
+  const search = useAppSelector(selectSearch);
+  const city = useAppSelector(selectCity);
+  const skills = useAppSelector(selectSkills);
+  const page = useAppSelector(selectPage);
+  const perPage = useAppSelector(selectPerPage);
 
   useEffect(() => {
     dispatch(fetchVacancies());

@@ -11,3 +11,4 @@ export const selectError = (state: RootState) => state.vacancies.error;
 export const selectPage = (state: RootState) => state.vacancies.page;
 export const selectTotalPages = (state: RootState) =>
   state.vacancies.totalPages;
+export const selectPerPage = (state: RootState) => state.vacancies.perPage;
